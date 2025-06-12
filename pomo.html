@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="./pomo.css">
+    <script src="./pomo.js"></script>
+</head>
+<body>
+  <div>
+    <p id="segundos">25:00</p>
+    <button onclick="resetTimer ()">Focar</button>
+    <button onclick="play_pause ()" id="play_pause">Play</button>
+    <button onclick="descansoCurto ()" >Descanso curto</button>
+    <button onclick="descansoLongo ()" >Descanso longo</button>
+    <div>
+        <p>Personalização do tempo de foco</p>
+        <input id="personalizado" type="text" min="1"> 
+        <span><button onclick="personalizar ()">Aplicar</button></span>
+    </div>
+
+  </div>
+</body>
+</html>
