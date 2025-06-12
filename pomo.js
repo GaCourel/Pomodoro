@@ -84,36 +84,31 @@ function play_pause()   // Para o timer
 
 function resetTimer ()
 {
-    segundos = tempo;
     atualizarDisplay ();
     if (cronometro)
     {
         clearInterval (timer);
         cronometro = false;
     }
+}
+
+function foco ()
+{
+    segundos = tempo;
+    resetTimer ();
 }
 
 function descansoCurto ()
 {
     segundos = shortRest;
     cronometro = false;
-    atualizarDisplay ();
-    if (cronometro)
-    {
-        clearInterval (timer);
-        cronometro = false;
-    }
+    resetTimer ();
 }
 
 function descansoLongo ()
 {
     segundos = longRest;
     cronometro = false;
-    atualizarDisplay ();
-    if (cronometro)
-    {
-        clearInterval (timer);
-        cronometro = false;
-    }
+    resetTimer ();
 }
 

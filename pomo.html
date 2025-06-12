@@ -8,16 +8,25 @@
     <script src="./pomo.js"></script>
 </head>
 <body>
-  <div>
-    <p id="segundos">25:00</p>
-    <button onclick="resetTimer ()">Focar</button>
-    <button onclick="play_pause ()" id="play_pause">Play</button>
-    <button onclick="descansoCurto ()" >Descanso curto</button>
-    <button onclick="descansoLongo ()" >Descanso longo</button>
+  <div class = pomodoro>
+    <div class="botoes">
+      <button onclick="descansoCurto ()" >Descanso curto</button>
+      <button onclick="foco ()">Focar</button>
+      <button onclick="descansoLongo ()" >Descanso longo</button>
+      
+    </div>
+    <div class="tempo">
+      <div class="tempodentro">
+        <p id="segundos">25:00</p>
+      </div>
+    </div>
     <div>
         <p>Personalização do tempo de foco</p>
         <input id="personalizado" type="text" min="1"> 
         <span><button onclick="personalizar ()">Aplicar</button></span>
+      <div class="botaoplay">
+        <button onclick="play_pause ()" >Play</button>
+      </div>
     </div>
 
   </div>
