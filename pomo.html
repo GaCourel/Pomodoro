@@ -10,20 +10,12 @@
 <body>
   <div class = pomodoro>
     <div class="botoes">
-      <button onclick="descansoCurto ()" >Descanso curto</button>
-      <button onclick="foco ()">Focar</button>
-      <button onclick="descansoLongo ()" >Descanso longo</button>
-      
+      <button id="botoes"onclick="descansoCurto ()" >Descanso curto</button>
+      <button id="botoes"onclick="foco ()">Focar</button>
+      <button id="botoes"onclick="descansoLongo ()" >Descanso longo</button>  
     </div>
-    <div class="tempo">
-      <div class="tempodentro">
-        <p id="segundos">25:00</p>
-      </div>
-    </div>
-    <div>
-        <p>Personalização do tempo de foco</p>
-        <input id="personalizado" type="text" min="1"> 
-        <span><button onclick="personalizar ()">Aplicar</button></span>
+        <p id="segundos" contenteditable="true" onblur="atualizarTempo ()">25:00</p>
+    <div> 
         <button id="botaoplay" onclick="play_pause ()" >Play</button>
     </div>
 

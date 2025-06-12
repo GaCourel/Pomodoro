@@ -6,6 +6,10 @@
     --roxo-escurinho: rgb(54, 23, 163);
 }
 
+body, .pomodoro, button {
+  transition: background-color 1.5s, color 1.5s;
+}
+
 body {
     background-image: url('stacked-waves-haikei\ \(1\).svg');
     background-repeat: no-repeat;
@@ -14,6 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 html, body {
   margin: 0;
@@ -22,6 +28,17 @@ html, body {
   width: 100%;
 }
 
+input {
+  height:45px;
+  width: auto;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  margin-bottom: 0;
+}
 .pomodoro {
   padding: 1.2em;
   width: 30vw;
@@ -32,21 +49,57 @@ html, body {
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  position: relative;
 }
 
 #segundos
 {
-  font-size: 4em;
+  font-size: 5.5em;
   color: aliceblue;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-button {
+#botoes {
   background-color: var(--azul-clarinho);
   color: black;
   border-radius: 6px;
-  height: 50px;
-  width: auto;
+  height: 4.5em;
+  width: 8.5em;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  font-family: monospace;
+}
+#botoes:hover {
+  background-color: var(--roxo-clarinho); 
+  color: white;
+}
+
+#botoes2 {
+  background-color: var(--azul-clarinho);
+  color: black;
+  border-radius: 6px;
+  height: 5em;
+  width: 7em;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+#botoes2:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
+
+#botaoplay {
+  background-color: var(--azul-clarinho);
+  color: black;
+  border-radius: 6px;
+  height: 5em;
+  width: 7em;
+  font-weight: bold;
+  transition-duration: 0.4s;
+}
+#botaoplay:hover {
+  background-color: var(--roxo-clarinho); /* Green */
+  color: white;
 }
 
 /*modo de foco*/

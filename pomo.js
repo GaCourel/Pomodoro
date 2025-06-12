@@ -11,19 +11,26 @@ function segundosParaTempo ()
     return  `${min}:${s}`;
 }
 
+function atualizarTempo() {
+    const tempoInput = document.querySelector("#segundos").textContent;
+    const [minutos, segundosInput] = tempoInput.split(":").map(num => parseInt(num));
+    
+    // Verificar se a entrada tem formato válido de tempo MM:SS
+    if (!isNaN(minutos) && !isNaN(segundosInput) && minutos >= 0 && segundosInput >= 0 && segundosInput < 60) {
+        segundos = minutos * 60 + segundosInput;
+        tempo = segundos;
+        shortRest = Math.floor(tempo / 5);
+        longRest = Math.floor(tempo * (3 / 5));
+        atualizarDisplay();
+    } else {
+        // Caso o formato seja inválido, mantemos o tempo original
+        alert("Formato inválido. Use MM:SS.");
+    }
+}
+
 function atualizarDisplay() // Atualiza o conteúdo do elemento HTML 
 {
     document.querySelector("#segundos").textContent = segundosParaTempo ();
-}
-
-function personalizar ()
-{
-    const novovalor = Number(document.querySelector("#personalizado").value);
-    segundos = novovalor;
-    tempo = novovalor;
-    shortRest = Math.floor(tempo / 5);
-    longRest = Math.floor(tempo * (3 / 5));
-    atualizarDisplay();
 }
 
 function passaTempo ()
