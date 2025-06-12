@@ -1,6 +1,6 @@
 let segundos = 1500, tempo = 1500, counter = 0;
 let shortRest = Math.floor(tempo / 5), longRest = Math.floor(tempo * (3 / 5));
-let tempoFoco = true, cronometro = false;
+let tempoFoco = false, cronometro = false;
 let timer;
 
 function segundosParaTempo ()
@@ -49,6 +49,7 @@ function passaTempo ()
                 segundos = longRest;
                 atualizarDisplay ();
             }
+            alterarModo ();
         }
     }
     else if (segundos >= 0 && !tempoFoco)
@@ -63,12 +64,20 @@ function passaTempo ()
             segundos = tempo;
             atualizarDisplay ();
         }
+        alterarModo ();
     }
     
 }
 
 function play_pause()   // Para o timer
 {
+    
+    if (segundos == tempo)
+    {
+        tempoFoco = true;
+        alterarModo();
+    }
+
     if (!cronometro)
     {
         timer = setInterval (passaTempo, 1000);
@@ -96,19 +105,44 @@ function foco ()
 {
     segundos = tempo;
     resetTimer ();
+    tempoFoco = true;
+    alterarModo ();
 }
 
 function descansoCurto ()
 {
     segundos = shortRest;
-    cronometro = false;
     resetTimer ();
+    tempoFoco = false;
+    alterarModo ();
 }
 
 function descansoLongo ()
 {
     segundos = longRest;
-    cronometro = false;
     resetTimer ();
+    tempoFoco = false;
+    alterarModo ();
 }
 
+/* alteração do CSS modo de foco */
+function alterarModo ()
+{
+    const body = document.body;
+    const pomodoro = document.querySelector('.pomodoro');
+    const botoes = document.querySelectorAll('button');
+
+    if (tempoFoco)
+    {
+        body.classList.add('backgroundFoco');
+        pomodoro.classList.add('pomodoroColor');
+        botoes.forEach(button => button.classList.add('buttonColor'));
+    }
+    else
+    {
+        body.classList.remove('backgroundFoco');
+        pomodoro.classList.remove('pomodoroColor');
+        botoes.forEach(button => button.classList.remove('buttonColor'));
+    }
+}
+/* alteração do CSS modo de foco */

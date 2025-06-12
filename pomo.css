@@ -43,3 +43,18 @@ button {
   height: 50px;
   width: auto;
 }
+
+/*modo de foco*/
+.backgroundFoco
+{
+  background-image: url('stacked-waves-haikei\ \(2\).svg');
+}
+.pomodoroColor
+{
+  background-color: var(--roxo-escurinho);
+}
+.buttonColor
+{
+  background-color: var(--roxo-clarinho);
+}
+/*modo de foco*/
