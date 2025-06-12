@@ -1,9 +1,16 @@
+:root
+{
+    --azul-clarinho: #64A2F0;
+    --azul-escurinho: #005BA9;
+    --roxo-clarinho: #8964EC;
+    --roxo-escurinho: #491AD4;
+}
+
 body {
     background-image: url('stacked-waves-haikei\ \(1\).svg');
     background-repeat: no-repeat;
     background-size: cover; /* or contain, or custom values */
     background-position: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,46 +24,22 @@ html, body {
 
 .pomodoro {
   padding: 1.2em;
-  width: 350px;
-  height: 450px;
-  background-color: var(--azulbugado);
+  width: 30vw;
+  height: 30vw;
+  background-color: var(--azul-escurinho);
   display: flex;
   flex-direction: column;
-  justify-content: first baseline;
+  justify-content: center;
   gap: 25px;
   align-items: center;
-  border-radius: 5%;
+  border-radius: 100%;
   position: relative;
 }
 
 button {
-  background-color: blueviolet;
+  background-color: var(--azul-clarinho);
   color: white;
   border-radius: 6px;
   height: 50px;
   width: auto;
-}
-
-.tempo {
-  background-color: rgb(14, 139, 202);
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.tempodentro {
-  height: 180px;
-  width: 180px;
-  background-color: var(--azulbugado);
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:root
-{
-    --azulbugado: rgb(00, 22, 33);
 }

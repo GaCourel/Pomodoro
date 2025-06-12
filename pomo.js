@@ -79,7 +79,7 @@ function play_pause()   // Para o timer
         clearInterval (timer);
         cronometro = false;
     } 
-    document.querySelector("#play_pause").textContent = cronometro ? "Pause" : "Play";
+    document.querySelector("#botaoplay").textContent = cronometro ? "Pause" : "Play";
 }
 
 function resetTimer ()
