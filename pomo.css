@@ -33,17 +33,8 @@ input {
   width: auto;
 }
 
-.botoes {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5em;
-  margin-bottom: 0;
-}
 .pomodoro {
   padding: 1.2em;
-  width: 30vw;
-  height: 30vw;
-  background-color: var(--azul-escurinho);
   width: 30vw;
   height: 30vw;
   background-color: var(--azul-escurinho);
@@ -62,48 +53,43 @@ input {
   margin-bottom: 0.5em;
 }
 
-#botoes {
-  background-color: var(--azul-clarinho);
+/*botões*/
+.botoes 
+{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  margin-bottom: 0;
+}
+
+#botaoplay, #botao1, #botao2, #botao3 
+{
+  background-color: var(--azul-escurinho);
   color: black;
-  border-radius: 6px;
+  border-radius: 1.5em;
   height: 4.5em;
-  width: 8.5em;
+  width: 7em;
   font-weight: bold;
-  transition-duration: 0.4s;
+  transition-duration: 1.5s;
   font-family: monospace;
 }
-#botoes:hover {
-  background-color: var(--roxo-clarinho); 
+
+#botao1:hover, #botao2:hover, #botao3:hover 
+{
+  /*background-color: var(--azul-clarinho); */
   color: white;
 }
 
-#botoes2 {
+#botaoplay:hover 
+{
   background-color: var(--azul-clarinho);
-  color: black;
-  border-radius: 6px;
-  height: 5em;
-  width: 7em;
-  font-weight: bold;
-  transition-duration: 0.4s;
-}
-#botoes2:hover {
-  background-color: #04AA6D; /* Green */
   color: white;
 }
-
-#botaoplay {
-  background-color: var(--azul-clarinho);
-  color: black;
-  border-radius: 6px;
-  height: 5em;
-  width: 7em;
-  font-weight: bold;
-  transition-duration: 0.4s;
+#botaoplay.playFoco:hover
+{
+  background-color: var(--roxo-clarinho) !important;
 }
-#botaoplay:hover {
-  background-color: var(--roxo-clarinho); /* Green */
-  color: white;
-}
+/*botões*/
 
 /*modo de foco*/
 .backgroundFoco
@@ -116,6 +102,6 @@ input {
 }
 .buttonColor
 {
-  background-color: var(--roxo-clarinho);
+  background-color: var(--roxo-escurinho) !important;
 }
 /*modo de foco*/

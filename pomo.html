@@ -9,16 +9,15 @@
 </head>
 <body>
   <div class = pomodoro>
-    <div class="botoes">
-      <button id="botoes"onclick="descansoCurto ()" >Descanso curto</button>
-      <button id="botoes"onclick="foco ()">Focar</button>
-      <button id="botoes"onclick="descansoLongo ()" >Descanso longo</button>  
-    </div>
-        <p id="segundos" contenteditable="true" onblur="atualizarTempo ()">25:00</p>
     <div> 
-        <button id="botaoplay" onclick="play_pause ()" >Play</button>
+      <button id="botaoplay" onclick="play_pause ()" >Play</button>
     </div>
-
+    <p id="segundos" contenteditable="true" onblur="atualizarTempo ()">25:00</p>
+    <div class="botoes">
+      <button id="botao1" onclick="descansoCurto ()" >Descanso curto</button>
+      <button id="botao2" onclick="foco ()">Focar</button>
+      <button id="botao3" onclick="descansoLongo ()" >Descanso longo</button>  
+    </div>
   </div>
 </body>
 </html>

@@ -137,19 +137,28 @@ function alterarModo ()
 {
     const body = document.body;
     const pomodoro = document.querySelector('.pomodoro');
-    const botoes = document.querySelectorAll('button');
+    const botaop = document.querySelector("#botaoplay");
+    const botaodc = document.querySelector("#botao1");
+    const botaof = document.querySelector("#botao2");
+    const botaodl = document.querySelector("#botao3");
 
     if (tempoFoco)
     {
         body.classList.add('backgroundFoco');
         pomodoro.classList.add('pomodoroColor');
-        botoes.forEach(button => button.classList.add('buttonColor'));
+        botaop.classList.add('buttonColor', 'playFoco');
+        botaodc.classList.add('buttonColor');
+        botaof.classList.add('buttonColor');
+        botaodl.classList.add('buttonColor');
     }
     else
     {
         body.classList.remove('backgroundFoco');
         pomodoro.classList.remove('pomodoroColor');
-        botoes.forEach(button => button.classList.remove('buttonColor'));
+        botaop.classList.remove('buttonColor', 'playFoco');
+        botaodc.classList.remove('buttonColor');
+        botaof.classList.remove('buttonColor');
+        botaodl.classList.remove('buttonColor');
     }
 }
 /* alteração do CSS modo de foco */
