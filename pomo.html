@@ -8,7 +8,13 @@
     <script src="./pomo.js"></script>
 </head>
 <body>
-  <div class = pomodoro>
+  <div id="caixinha">
+    <h3 id="xmodo">Modo de descanso!</h3>
+    <p id="xciclos">Você concluiu 0 ciclos</p>
+    <p id="xpomodoro">Você fez 0 pomodoros</p>
+    <p id="xtempo">Você manteve o foco por 00:00</p>
+  </div>
+  <div class = "pomodoro">
     <div> 
       <button id="botaoplay" onclick="play_pause ()" >Play</button>
     </div>
@@ -18,6 +24,9 @@
       <button id="botao2" onclick="foco ()">Focar</button>
       <button id="botao3" onclick="descansoLongo ()" >Descanso longo</button>  
     </div>
+  </div>
+  <div id="instructions">
+      <p>?</p>
   </div>
 </body>
 </html>

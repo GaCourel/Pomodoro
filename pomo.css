@@ -6,7 +6,8 @@
     --roxo-escurinho: rgb(54, 23, 163);
 }
 
-body, .pomodoro, button {
+body, .pomodoro, button
+{
   transition: background-color 1.5s, color 1.5s;
 }
 
@@ -15,12 +16,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover; /* or contain, or custom values */
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 6fr 1fr;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    position: relative;
 }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -28,12 +30,26 @@ html, body {
   width: 100%;
 }
 
-input {
-  height:45px;
-  width: auto;
+#caixinha
+{
+  background-color: var(--azul-clarinho);
+  margin-top: 2.5em;
+  margin-left: 1.5em;
+  justify-self: center;
+  border: black solid 0.1em;
+  border-radius: 1.2em;
+  height: fit-content;
+  padding: 1em;
+  text-align: center;
 }
 
-.pomodoro {
+.pomodoro 
+{
+  position: absolute; /* Tira do fluxo normal do grid */
+  top: 50%; /* Posiciona no meio vertical */
+  left: 50%; /* Posiciona no meio horizontal */
+  transform: translate(-50%, -50%); /* Ajusta o centro verdadeiro */
+  align-self: center;
   padding: 1.2em;
   width: 30vw;
   height: 30vw;
@@ -43,6 +59,23 @@ input {
   justify-content: center;
   align-items: center;
   border-radius: 100%;
+}
+
+#instructions
+{
+  grid-column: 3;
+  justify-self: center;
+  align-self: flex-end;
+  margin-bottom: 2em;
+  border: black solid 0.1em;
+  border-radius: 100%;
+  width: 30%;
+  text-align: center;
+  background-color: var(--azul-clarinho);
+}
+#instructions:hover
+{
+  outline: 0.1em solid black;
 }
 
 #segundos
@@ -74,16 +107,14 @@ input {
   font-family: monospace;
 }
 
-#botao1:hover, #botao2:hover, #botao3:hover 
+#botaoplay:hover, #botao1:hover, #botao2:hover, #botao3:hover 
 {
-  /*background-color: var(--azul-clarinho); */
   color: white;
 }
 
 #botaoplay:hover 
 {
-  background-color: var(--azul-clarinho);
-  color: white;
+  background-color: var(--azul-clarinho) !important;
 }
 #botaoplay.playFoco:hover
 {
@@ -95,13 +126,5 @@ input {
 .backgroundFoco
 {
   background-image: url('stacked-waves-haikei\ \(2\).svg');
-}
-.pomodoroColor
-{
-  background-color: var(--roxo-escurinho);
-}
-.buttonColor
-{
-  background-color: var(--roxo-escurinho) !important;
 }
 /*modo de foco*/
