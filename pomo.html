@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="./pomo.css">
-    <script src="./pomo.js"></script>
 </head>
 <body>
   <div id="caixinha">
@@ -21,12 +20,13 @@
     <p id="segundos" contenteditable="true" onblur="atualizarTempo ()">25:00</p>
     <div class="botoes">
       <button id="botao1" onclick="descansoCurto ()" >Descanso curto</button>
-      <button id="botao2" onclick="foco ()">Focar</button>
+      <button id="botao2" onclick="foco ()">Pomodoro</button>
       <button id="botao3" onclick="descansoLongo ()" >Descanso longo</button>  
     </div>
   </div>
   <div id="instructions">
       <p>?</p>
   </div>
+  <script src="./pomo.js"></script>
 </body>
 </html>

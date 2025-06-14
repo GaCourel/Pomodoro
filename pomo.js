@@ -178,12 +178,12 @@ function alterarModo ()
         body.classList.add('backgroundFoco');
         botaop.classList.add('playFoco');
         pomodoro.style.backgroundColor = 'var(--roxo-escurinho)';
-        caixinha.style.backgroundColor = "var(--roxo-clarinho)";
-        botaop.style.backgroundColor = 'var(--roxo-escurinho)';
-        botaodc.style.backgroundColor = 'var(--roxo-escurinho)';
-        botaof.style.backgroundColor = 'var(--roxo-escurinho)';
-        botaodl.style.backgroundColor = 'var(--roxo-escurinho)';
-        uai.style.backgroundColor = "var(--roxo-clarinho)";
+        caixinha.style.backgroundColor = "var(--roxo-escurinho2)";
+        botaop.style.backgroundColor = 'var(--roxo-escurinho2)';
+        botaodc.style.backgroundColor = 'var(--roxo-escurinho2)';
+        botaof.style.backgroundColor = 'var(--roxo-escurinho2)';
+        botaodl.style.backgroundColor = 'var(--roxo-escurinho2)';
+        uai.style.backgroundColor = "var(--roxo-escurinho2)";
         document.querySelector("#xmodo").textContent = `Modo de foco!`;
     }
     else
@@ -191,12 +191,12 @@ function alterarModo ()
         body.classList.remove('backgroundFoco');
         botaop.classList.remove('playFoco');
         pomodoro.style.backgroundColor = 'var(--azul-escurinho)';
-        caixinha.style.backgroundColor = "var(--azul-clarinho)";
-        botaop.style.backgroundColor = 'var(--azul-escurinho)';
-        botaodc.style.backgroundColor = 'var(--azul-escurinho)';
-        botaof.style.backgroundColor = 'var(--azul-escurinho)';
-        botaodl.style.backgroundColor = 'var(--azul-escurinho)';
-        uai.style.backgroundColor = "var(--azul-clarinho)";
+        caixinha.style.backgroundColor = "var(--azul-escurinho2)";
+        botaop.style.backgroundColor = 'var(--azul-escurinho2)';
+        botaodc.style.backgroundColor = 'var(--azul-escurinho2)';
+        botaof.style.backgroundColor = 'var(--azul-escurinho2)';
+        botaodl.style.backgroundColor = 'var(--azul-escurinho2)';
+        uai.style.backgroundColor = "var(--azul-escurinho2)";
         document.querySelector("#xmodo").textContent = `Modo de descanso!`;
     }
 }

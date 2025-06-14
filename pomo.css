@@ -4,11 +4,13 @@
     --azul-escurinho: #005BA9;
     --roxo-clarinho: #8964EC;
     --roxo-escurinho: rgb(54, 23, 163);
+    --azul-escurinho2: #014886;
+    --roxo-escurinho2: rgb(42, 18, 129);
 }
 
 body, .pomodoro, button
 {
-  transition: background-color 1.5s, color 1.5s;
+  transition: 1.5s, color 1.5s;
 }
 
 body {
@@ -21,6 +23,35 @@ body {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     position: relative;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 1.5s;
+    pointer-events: none;
+}
+body::before {
+    background-image: url('stacked-waves-haikei (1).svg');
+    opacity: 1;
+}
+body::after {
+    background-image: url('stacked-waves-haikei (2).svg');
+    opacity: 0;
+}
+body.backgroundFoco::before {
+    opacity: 0;
+}
+body.backgroundFoco::after {
+    opacity: 1;
 }
 
 html, body {
@@ -32,25 +63,30 @@ html, body {
 
 #caixinha
 {
-  background-color: var(--azul-clarinho);
+  grid-column: 1;
+  background-color: var(--azul-escurinho2);
+  color: aliceblue;
   margin-top: 2.5em;
   margin-left: 1.5em;
   justify-self: center;
-  border: black solid 0.1em;
   border-radius: 1.2em;
   height: fit-content;
   padding: 1em;
   text-align: center;
+  transition: 1.5s;
 }
 
+
+/*antes*/
 .pomodoro 
 {
   position: absolute; /* Tira do fluxo normal do grid */
   top: 50%; /* Posiciona no meio vertical */
   left: 50%; /* Posiciona no meio horizontal */
   transform: translate(-50%, -50%); /* Ajusta o centro verdadeiro */
+  margin: 0 auto;
   align-self: center;
-  padding: 1.2em;
+  padding: 5%;
   width: 30vw;
   height: 30vw;
   background-color: var(--azul-escurinho);
@@ -59,57 +95,72 @@ html, body {
   justify-content: center;
   align-items: center;
   border-radius: 100%;
+  box-shadow: 0 4px 50px 40px rgba(0,0,0,0.15);
+  box-sizing: border-box;
 }
 
 #instructions
 {
   grid-column: 3;
+  color: aliceblue;
   justify-self: center;
   align-self: flex-end;
   margin-bottom: 2em;
-  border: black solid 0.1em;
   border-radius: 100%;
-  width: 30%;
+  width: 3.5vw;
+  height: 3.5vw;
   text-align: center;
-  background-color: var(--azul-clarinho);
+  background-color: var(--azul-escurinho2);
+  transition: 1.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #instructions:hover
 {
-  outline: 0.1em solid black;
+  transform: scale(1.1);
 }
 
 #segundos
 {
-  font-size: 5.5em;
+  font-size: 10vmin;
   color: aliceblue;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin: 12%;
 }
 
 /*botões*/
+
 .botoes 
 {
   display: flex;
   flex-direction: row;
-  gap: 1.5em;
+  gap: 3vmin;
   margin-bottom: 0;
+  box-sizing: border-box;
 }
 
 #botaoplay, #botao1, #botao2, #botao3 
 {
-  background-color: var(--azul-escurinho);
-  color: black;
-  border-radius: 1.5em;
-  height: 4.5em;
-  width: 7em;
+  background-color: var(--azul-escurinho2);
+  border-radius: 2.2vmin;
+  height: 8vmin;
+  width: 12vmin;
   font-weight: bold;
   transition-duration: 1.5s;
   font-family: monospace;
+  border: none;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  outline: none;  
+  transition: all 0.5s ease;
 }
 
 #botaoplay:hover, #botao1:hover, #botao2:hover, #botao3:hover 
 {
   color: white;
+  transform: scale(1.1);
 }
 
 #botaoplay:hover 
