@@ -226,3 +226,64 @@ dialog
   background-image: url('stacked-waves-haikei\ \(2\).svg');
 }
 /*modo de foco*/
+
+/*reponsividade celular
+/*@media (max-width: 499px)*/
+/*reponsividade celular*/
+
+/*reponsividade Tablet*/
+/*@media (min-width: 500px) and (max-width: 849px)*/
+/*reponsividade Tablet*/
+
+/*reponsividade Laptop*/
+@media (min-width: 850px) and (max-width: 1200px)
+{
+  #caixinha
+  {
+    font-size: 0.8em;
+  }
+  .pomodoro
+  {
+    width: 40vw;
+    height: 40vw;
+  }
+  #botaoplay, #botao1, #botao2, #botao3
+  {
+    font-size: 0.9em;
+    width: 11vh;
+  }
+  #segundos
+  {
+    font-size: 4em;
+  }
+  #instructions
+  {
+    width: 5vw;
+    height: 5vw;
+  }
+
+}
+/*reponsividade Laptop*/
+
+/*reponsividade 4K*/
+@media (min-width: 1700px)
+{
+  #caixinha
+  {
+    width: fit-content;
+    font-size: 1.7em;
+  }
+  #botaoplay, #botao1, #botao2, #botao3
+  {
+    font-size: 2em;
+  }
+  #segundos
+  {
+    font-size: 10em;
+  }
+  #instructions
+  {
+    font-size: 2em;
+  }
+}
+/*reponsividade 4K*/

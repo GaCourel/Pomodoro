@@ -2,6 +2,8 @@ let segundos = 1500, tempo = 1500, counterp = 0, counterc = 0, xfoco = 0;
 let shortRest = Math.floor(tempo / 5), longRest = Math.floor(tempo * (3 / 5));
 let tempoFoco = false, cronometro = false;
 let timer;
+const sfoco = new Audio('./sounds/level-up-191997.mp3');
+const sdescanso = new Audio("./sounds/system-notification-alert-toast-warn-274740.mp3");
 
 function segundosParaTempo (param)
 {
@@ -61,7 +63,6 @@ function passaTempo ()
             {
                 document.querySelector("#xpomodoro").textContent = `Você fez ${counterp} pomodoros`;
             }
-            //som de alarme
 
             if (counterp % 4 != 0)
             {
@@ -73,6 +74,7 @@ function passaTempo ()
                 segundos = longRest;
                 atualizarDisplay ();
             }
+            sdescanso.play();
             alterarModo ();
         }
     }
@@ -84,7 +86,6 @@ function passaTempo ()
         if (segundos == 0)
         {
             tempoFoco = true;
-            //som de alarme
             segundos = tempo;
             atualizarDisplay ();
 
@@ -100,8 +101,9 @@ function passaTempo ()
                 document.querySelector("#xciclos").textContent = `Você concluiu ${counterc} ciclos`;
                 }
             }
+            sfoco.play();
+            alterarModo ();
         }
-        alterarModo ();
     }
     
 }
