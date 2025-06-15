@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="./pomo.css">
+    <script src="./pomo.js"></script>
 </head>
 <body>
   <div id="caixinha">
@@ -24,9 +25,17 @@
       <button id="botao3" onclick="descansoLongo ()" >Descanso longo</button>  
     </div>
   </div>
-  <div id="instructions">
-      <p>?</p>
-  </div>
-  <script src="./pomo.js"></script>
+    <button id="instructions" onclick="abrirModal ()">?</button>
+    <dialog>
+      <div id="elementos">
+        <button id="fechar" onclick="fecharModal ()">&times;</button>
+        <h2 id="header">Instruções</h2>
+        <p>É possível personalizar o seu tempo de foco clicando sobre o display e digitando o tempo desejado, o tempo deve ser digitado no formato "MM:SS", o tempo limite é de 60 minutos, caso não esteja nos conformes o tempo é reajustado o último tempo válido colocado. Após digitar clique fora do display</p>
+        <p>O tempo de descanso curto corresponde a 1/5 do tempo de foco e o de descanso longo a 3/5</p>
+        <p>Um "pomodoro" é um tempo de foco</p>
+        <p>O tempo de descanso longo é habilitado após completar o 4º pomodoro</p>
+        <p>Um ciclo equivale a 4 pomodoros e é contabilizado após o término do tempo de descanso longo</p>
+      </div>
+    </dialog>
 </body>
 </html>

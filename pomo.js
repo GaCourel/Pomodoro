@@ -25,6 +25,7 @@ function atualizarTempo() {
     } else {
         // Caso o formato seja inválido, mantemos o tempo original
         alert("Formato inválido (use MM:SS). Tempo não pode ser maior que 1 hora");
+        atualizarDisplay();
     }
 }
 
@@ -161,6 +162,20 @@ function descansoLongo ()
     alterarModo ();
 }
 
+/*botão instructions*/
+function abrirModal ()
+{
+    const modal = document.querySelector("dialog");
+    modal.showModal();
+}
+
+function fecharModal ()
+{
+    const modal = document.querySelector("dialog");
+    modal.close();
+}
+/*botão instructions*/
+
 /* alteração do CSS modo de foco */
 function alterarModo ()
 {
@@ -172,6 +187,8 @@ function alterarModo ()
     const botaof = document.querySelector("#botao2");
     const botaodl = document.querySelector("#botao3");
     const uai = document.querySelector("#instructions");
+    const dialog = document.querySelector("dialog");
+    const fechar = document.querySelector("#fechar");
 
     if (tempoFoco)
     {
@@ -184,6 +201,8 @@ function alterarModo ()
         botaof.style.backgroundColor = 'var(--roxo-escurinho2)';
         botaodl.style.backgroundColor = 'var(--roxo-escurinho2)';
         uai.style.backgroundColor = "var(--roxo-escurinho2)";
+        dialog.style.backgroundColor = "var(--roxo-escurinho)";
+        fechar.style.backgroundColor = "var(--roxo-escurinho2)";
         document.querySelector("#xmodo").textContent = `Modo de foco!`;
     }
     else
@@ -197,6 +216,8 @@ function alterarModo ()
         botaof.style.backgroundColor = 'var(--azul-escurinho2)';
         botaodl.style.backgroundColor = 'var(--azul-escurinho2)';
         uai.style.backgroundColor = "var(--azul-escurinho2)";
+        dialog.style.backgroundColor = "var(--azul-escurinho)";
+        fechar.style.backgroundColor = "var(--azul-escurinho2)";
         document.querySelector("#xmodo").textContent = `Modo de descanso!`;
     }
 }

@@ -95,10 +95,11 @@ html, body {
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  box-shadow: 0 4px 50px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 50px 40px rgba(0,0,0,0.20);
   box-sizing: border-box;
 }
 
+/*botão ?*/
 #instructions
 {
   grid-column: 3;
@@ -115,11 +116,57 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 #instructions:hover
 {
   transform: scale(1.1);
 }
+
+dialog
+{
+  position: fixed;
+  left: 62%;
+  width: 20%;
+  height: 75%;
+  border: none;
+  border-radius: 2em;
+  padding: 2em;
+  background-color: var(--azul-escurinho);
+  color: aliceblue;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.6);
+}
+
+#elementos
+{
+  display: flex;
+  flex-direction: column;
+}
+#header
+{
+  text-align: center;
+}
+#fechar
+{
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  width: 1.5vw;
+  height: 1.5vw;
+  border: none;
+  color: aliceblue;
+  background-color: var(--azul-escurinho2);
+  border-radius: 100%;
+  cursor: pointer;
+}
+#fechar:hover
+{
+  transform: scale(1.1);
+}
+/*botão ?*/
 
 #segundos
 {
@@ -143,7 +190,7 @@ html, body {
 {
   background-color: var(--azul-escurinho2);
   border-radius: 2.2vmin;
-  height: 8vmin;
+  height: 8vh;
   width: 12vmin;
   font-weight: bold;
   transition-duration: 1.5s;
