@@ -13,30 +13,32 @@ function segundosParaTempo (param)
     return  `${min}:${s}`;
 }
 
-function atualizarTempo() {
+function atualizarTempo() /*atualiza o display após editar*/
+{
     const tempoInput = document.querySelector("#segundos").textContent;
     const [minutos, segundosInput] = tempoInput.split(":").map(num => parseInt(num));
     
-    // Verificar se a entrada tem formato válido de tempo MM:SS
-    if (!isNaN(minutos) && !isNaN(segundosInput) && minutos >= 0 && segundosInput >= 0 && segundosInput < 60 && minutos <= 60) {
+    /* Verifica se a entrada tem formato válido de tempo MM:SS */
+    if (!isNaN(minutos) && !isNaN(segundosInput) && minutos >= 0 && segundosInput >= 0 && segundosInput < 60 && minutos <= 60) 
+    {
         segundos = minutos * 60 + segundosInput;
         tempo = segundos;
         shortRest = Math.floor(tempo / 5);
         longRest = Math.floor(tempo * (3 / 5));
         atualizarDisplay();
-    } else {
-        // Caso o formato seja inválido, mantemos o tempo original
+    } else 
+    {
         alert("Formato inválido (use MM:SS). Tempo não pode ser maior que 1 hora");
         atualizarDisplay();
     }
 }
 
-function atualizarDisplay() // Atualiza o conteúdo do elemento HTML 
+function atualizarDisplay() 
 {
     document.querySelector("#segundos").textContent = segundosParaTempo (segundos);
 }
 
-function atualizarFoco ()
+function atualizarFoco () /*contador de tempo em foco da caixinha*/
 {
     const horario = segundosParaTempo (xfoco);
     document.querySelector("#xtempo").textContent = `Você manteve o foco por ${horario}`;
@@ -108,7 +110,7 @@ function passaTempo ()
     
 }
 
-function play_pause()   // Para o timer
+function play_pause() 
 {
     
     if (segundos == tempo)
@@ -140,6 +142,7 @@ function resetTimer ()
     }
 }
 
+/*diferentes tempos*/
 function foco ()
 {
     segundos = tempo;
@@ -163,6 +166,7 @@ function descansoLongo ()
     tempoFoco = false;
     alterarModo ();
 }
+/*diferentes tempos*/
 
 /*botão instructions*/
 function abrirModal ()

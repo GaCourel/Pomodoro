@@ -1,3 +1,4 @@
+/*cores*/
 :root
 {
     --azul-clarinho: #64A2F0;
@@ -7,6 +8,7 @@
     --azul-escurinho2: #014886;
     --roxo-escurinho2: rgb(42, 18, 129);
 }
+/*cores*/
 
 body, .pomodoro, button
 {
@@ -54,7 +56,8 @@ body.backgroundFoco::after {
     opacity: 1;
 }
 
-html, body {
+html, body 
+{
   margin: 0;
   padding: 0;
   height: 100%;
@@ -76,8 +79,7 @@ html, body {
   transition: 1.5s;
 }
 
-
-/*antes*/
+/*circunferência*/
 .pomodoro 
 {
   position: absolute; /* Tira do fluxo normal do grid */
@@ -98,6 +100,16 @@ html, body {
   box-shadow: 0 4px 50px 40px rgba(0,0,0,0.20);
   box-sizing: border-box;
 }
+/*circunferência*/
+
+/*display*/
+#segundos
+{
+  font-size: 10vmin;
+  color: aliceblue;
+  margin: 12%;
+}
+/*display*/
 
 /*botão ?*/
 #instructions
@@ -168,15 +180,7 @@ dialog
 }
 /*botão ?*/
 
-#segundos
-{
-  font-size: 10vmin;
-  color: aliceblue;
-  margin: 12%;
-}
-
 /*botões*/
-
 .botoes 
 {
   display: flex;
@@ -227,12 +231,85 @@ dialog
 }
 /*modo de foco*/
 
-/*reponsividade celular
-/*@media (max-width: 499px)*/
+/*reponsividade celular*/
+@media (max-width: 499px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    #caixinha {
+        width: 80% !important;
+        margin: 0 0 20px 0;
+        font-size: 0.9em;
+    }
+    
+    .pomodoro {
+        position: relative;
+        width: 90vw !important;
+        height: 90vw !important;
+        max-width: 280px;
+        max-height: 280px;
+        margin: 0;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+
+    #segundos {
+        font-size: 3.5em !important;
+    }
+
+    .botoes {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        position: relative;
+
+    }
+
+    #botao1, #botao2, #botao3  {
+        width: 22% !important;
+        height: 40px;
+        font-size: 0.8em !important;
+    }
+
+    #botaoplay {
+      position: relative;
+      width: 100% !important;
+      height: 40px;
+      top: 5vw;
+      font-size: 1em;
+    }
+
+    #instructions {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    dialog {
+        width: 80vw;
+        height: 70vh;
+        top: 10vh;
+        left: 2vw;
+    }
+
+  #fechar
+  {
+    width: 7vw;
+    height: 7vw;
+  }
+}
 /*reponsividade celular*/
 
 /*responsividade Tablet*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 849px) {
     body {
         grid-template-columns: 1fr;
         display: flex;
@@ -305,6 +382,13 @@ dialog
         font-size: 1em;
     }
 
+    #instructions
+    {
+      font-size: 1em;
+      right: 50px;
+
+    }
+
     #fechar {
         width: 40px;
         height: 40px;
@@ -313,7 +397,7 @@ dialog
 }
 
 /* Tablet em orientação paisagem */
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media screen and (min-width: 500px) and (max-width: 849px) and (orientation: landscape) {
     body {
         flex-direction: row;
         justify-content: space-around;
@@ -331,17 +415,18 @@ dialog
         width: 400px;
         height: 400px;
         order: 2;
-        margin: 0;
     }
 
     #instructions {
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        right: 100px;
     }
 }
+/*Tablet em orientação paisagem*/
 /*reponsividade Tablet*/
 
+/*responsividade Laptop*/
 @media (min-width: 850px) and (max-width: 1200px)
 {
   #caixinha
@@ -355,7 +440,7 @@ dialog
   }
   #botaoplay, #botao1, #botao2, #botao3
   {
-    font-size: 0.5em;
+    font-size: 1em;
     width: 11vh;
   }
   #segundos
@@ -366,6 +451,11 @@ dialog
   {
     width: 5vw;
     height: 5vw;
+  }
+  #fechar
+  {
+    width: 3vw;
+    height: 3vw;
   }
 
 }
@@ -391,72 +481,16 @@ dialog
   {
     font-size: 2em;
   }
+  dialog
+  {
+    left: 58%;
+    font-size: 1.6em;
+  }
+  #fechar
+  {
+    width: 2.5vw;
+    height: 2.5vw;
+    font-size: 1.5em;
+  }
 }
 /*reponsividade 4K*/
-
-/* Responsividade Mobile */
-@media (max-width: 499px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 10px;
-    }
-    
-    #caixinha {
-        width: 95%;
-        margin: 0 0 20px 0;
-        font-size: 0.9em;
-    }
-    
-    .pomodoro {
-        position: relative;
-        width: 80vw;
-        height: 80vw;
-        max-width: 280px;
-        max-height: 280px;
-        margin: 0;
-        top: auto;
-        left: auto;
-        transform: none;
-    }
-
-    #segundos {
-        font-size: 3em;
-    }
-
-    .botoes {
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        position: relative;
-
-    }
-
-    #botao1, #botao2, #botao3  {
-        width: 50%;
-        height: 40px;
-        font-size: 0.9em;
-    }
-
-    #botaoplay {
-      position: relative;
-      top: 5vw;
-    }
-
-    #instructions {
-        width: 40px;
-        height: 40px;
-        position: relative;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    dialog {
-        width: 80vw;
-        height: 70vh;
-        top: 10vh;
-        left: 2vw;
-    }
-}
